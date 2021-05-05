@@ -68,7 +68,7 @@ echo ""
 read -p "$cyan[ ? ] output password cracked : " out
 sleep 0.7
 echo ""
-read -p "$yellow[+] Press [ ENTER ] to Hack : " enter2
+read -p "$yellow[ + ] Press [ ENTER ] to Hack : " enter2
 sleep 1.5
 echo ""
 echo "[ + ] Running attack ... " | pv -qL 10 | lolcat
@@ -101,7 +101,7 @@ echo ""
 read -p "$cyan[ ? ] output password cracked : " out
 sleep 0.7
 echo ""
-read -p "$yellow[ + ] Press [ ENTER ] to Hack : " enter2
+read -p "$yellow[ + ] Press [ ENTER ] to Hack : " enter0
 sleep 1.5
 echo ""
 echo "[ + ] Running attack ... " | pv -qL 10 | lolcat
@@ -115,7 +115,6 @@ echo ""
 echo "$lightgreen[ * ] Hash Cracked ..." | pv -qL 10
 echo ""
 sleep 2
-exit
 esac
 done
 
