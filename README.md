@@ -4,8 +4,8 @@
             sudo apt-get install hashcat
             sudo apt-get install crunch
             cd crunchcat
-            chmod +x *
-           ./crunchcat.sh
+            sudo chmod +x *
+            sudo ./crunchcat.sh
 --------------------------------------------------
 
 crunch + hashcat to decrypt any hash
