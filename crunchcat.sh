@@ -71,11 +71,17 @@ echo ""
 read -p "$yellow[ + ] Press [ ENTER ] to Hack : " enter2
 sleep 1.5
 echo ""
-echo "[ + ] Running attack ... " | pv -qL 10 | lolcat
+echo "[ + ] Running attack ... " | pv -qL 10
 echo ""
-sleep 3
+sleep 1.5
 xterm -T "hashcat" -geometry 140x60-1+0 -e "crunch $lenght $max -f /usr/share/crunch/charset.lst $Charset | hashcat -m $mode1 -a 0 -o $out $hash && sleep 6.5" & > /dev/null2>&1
-sleep 2.5
+PID=$!
+wait $PID
+sleep 1.5
+echo ""
+echo "$lightgreen[ * ] Hash Cracked ..." | pv -qL 10
+echo ""
+sleep 2
 exit
 ;;
 Y)
@@ -104,9 +110,9 @@ echo ""
 read -p "$yellow[ + ] Press [ ENTER ] to Hack : " enter0
 sleep 1.5
 echo ""
-echo "[ + ] Running attack ... " | pv -qL 10 | lolcat
+echo "[ + ] Running attack ... " | pv -qL 10
 echo ""
-sleep 3
+sleep 1.5
 xterm -T "hashcat" -geometry 140x60-1+0 -e "hashcat -m $mode1 -a 0 -o $out $hash $wordlist2 && sleep 6.5" & > /dev/null2>&1
 PID=$!
 wait $PID
@@ -115,6 +121,7 @@ echo ""
 echo "$lightgreen[ * ] Hash Cracked ..." | pv -qL 10
 echo ""
 sleep 2
+exit
 esac
 done
 
