@@ -77,10 +77,6 @@ sleep 1.5
 xterm -T "hashcat" -geometry 140x60-1+0 -e "crunch $lenght $max -f /usr/share/crunch/charset.lst $Charset | hashcat -m $mode1 -a 0 -o $out $hash && sleep 6.5" & > /dev/null2>&1
 PID=$!
 wait $PID
-sleep 1.5
-echo ""
-echo "$lightgreen[ * ] Hash Cracked ..." | pv -qL 10
-echo ""
 sleep 2
 exit
 ;;
@@ -116,10 +112,6 @@ sleep 1.5
 xterm -T "hashcat" -geometry 140x60-1+0 -e "hashcat -m $mode1 -a 0 -o $out $hash $wordlist2 && sleep 6.5" & > /dev/null2>&1
 PID=$!
 wait $PID
-sleep 1.5
-echo ""
-echo "$lightgreen[ * ] Hash Cracked ..." | pv -qL 10
-echo ""
 sleep 2
 exit
 esac
